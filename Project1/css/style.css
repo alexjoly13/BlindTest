@@ -1,0 +1,48 @@
+* {
+  font-family: Nunito;
+  text-align: center;
+  color: lightgrey;
+}
+
+body {
+  background-color: black;
+
+  margin: 0;
+}
+
+.game-info {
+  padding: 3% 0% 5%;
+}
+
+.carousel {
+  width: 50%;
+  height: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.carousel-item img {
+  border-radius: 50px;
+  padding-bottom: 20px;
+}
+
+p {
+  font-size: 1.5em;
+  /* text-align: center; */
+}
+
+input {
+  outline: 0;
+  border: none;
+  border-bottom: 4px solid #b02835;
+  font-size: 4em;
+  width: 100%;
+  margin: 0 auto;
+  z-index: 100;
+  background-color: #000;
+  transition: all 0.5s;
+}
+
+.red-strong {
+  color: #b02835;
+}
