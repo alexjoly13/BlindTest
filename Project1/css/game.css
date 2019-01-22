@@ -1,6 +1,6 @@
 .timer {
   width: 15%;
-  background-color: #f4b400;
+  background-color: black;
   float: left;
   display: block;
   margin-right: 2%;
@@ -17,4 +17,11 @@
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
   color: #ff5722;
   font-size: 26px;
+}
+
+#buttonOne,
+#buttonTwo,
+#buttonThree,
+#buttonFour {
+  background-color: pink;
 }
