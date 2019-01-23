@@ -30,10 +30,12 @@
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
   color: #ff5722;
   font-size: 26px;
+  border-radius: 20px;
 }
 
 .container-btn {
   justify-content: center;
+  align-items: center;
   width: 500px;
   height: 300px;
   font-size: 3em;
@@ -61,4 +63,14 @@
 
 .correctAnswer {
   background-color: green;
+}
+
+.row {
+  justify-content: center;
+  align-items: center;
+}
+
+.left {
+  justify-content: center;
+  align-items: center;
 }

@@ -192,18 +192,8 @@ function countDown() {
 
 scoreSpan[0].textContent = actualScore;
 function checkAnswers() {
-  // console.log(target);
-  // console.log(corect);
   clearInterval(timerObject);
-  // Get the answer index
-  var answerIndex = song.answer;
-  // console.log(answerIndex);
-  // Get the actual answer index
-  var actualCorrectAnswerIndex = song.correctAnswer;
 
-  // console.log(actualCorrectAnswerIndex);
-
-  // console.log(oneAnswer);
   if (corect.includes(target)) {
     // console.log("dhfh");
     actualScore += 50;
