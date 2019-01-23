@@ -123,8 +123,9 @@ function playGame() {
   function countdown() {
     if (timeLeft === 0) {
       clearInterval(timerId);
-      // audio.pause();
-      // setTimeout(startGameForNewSong, 2000);
+      audio.pause();
+      setTimeout(startGameForNewSong, 2000);
+      timeLeft = 30;
     } else {
       timeLeft--;
       timerSpan[0].textContent = timeLeft;
@@ -146,4 +147,4 @@ function playGame() {
 //     // Incorrect Answer
 //   } else {
 //   }
-}
+// }
