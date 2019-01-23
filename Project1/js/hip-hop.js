@@ -28,6 +28,7 @@ var timerObject = undefined;
 var gameQuestions = [];
 var audio;
 var song;
+var target = "";
 
 // Array of Songs
 
@@ -54,7 +55,7 @@ var songs = [
   },
   {
     url: "audio/hip-hop/logic-numbers.mp3",
-    answer: ["G-Eazy", "Hoodie Allen", "Mac Miller", "Logic"],
+    answer: ["G-Eazy", "Paramore", "Mac Miller", "Logic"],
     correctAnswer: "Logic"
   }
 ];
@@ -113,8 +114,6 @@ $(".btn-outline-danger").click(function() {
   setTimeout(startGameForNewSong, 2000);
   setTimeout(playGame, 2000);
 });
-
-var target = "";
 
 $("#buttonOne").click(function() {
   target = event.target.innerHTML;
@@ -185,7 +184,7 @@ function playGame() {
     }
   }
 }
-// scoreSpan[0].textContent = actualScore;
+scoreSpan[0].textContent = actualScore;
 function checkAnswers() {
   // console.log(target);
   // console.log(corect);

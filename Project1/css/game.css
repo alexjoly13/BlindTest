@@ -1,3 +1,12 @@
+#game-area {
+  display: flex;
+}
+
+#gameHeader {
+  display: flex;
+  justify-content: space-around;
+}
+
 .timer {
   width: 15%;
   background-color: black;
@@ -11,12 +20,19 @@
 
 .score {
   width: 13%;
-  background-color: #fff;
+  background-color: black;
   float: left;
   display: block;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
   color: #ff5722;
   font-size: 26px;
+}
+
+.container-btn {
+  width: 500px;
+  height: 300px;
+  font-size: 3em;
+  text-align: center;
 }
 
 #buttonOne,
@@ -34,7 +50,7 @@
 #buttonTwo:hover,
 #buttonThree:hover,
 #buttonFour:hover {
-  background-color: #b02835; /* Green */
+  background-color: #b02835;
   color: white;
 }
 
