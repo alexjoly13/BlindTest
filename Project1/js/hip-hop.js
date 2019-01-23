@@ -7,8 +7,8 @@
 // startButton = document.getElementById("btn-outline-danger"),
 // // title = document.getElementById('title'),
 // // questionTitle = document.getElementsByClassName("questions"),
-// score = document.getElementsByClassName("score"),
-// scoreSpan = score[0].getElementsByTagName('span'),
+var score = document.getElementsByClassName("score");
+var scoreSpan = score[0].getElementsByTagName("span");
 var timer = document.getElementsByClassName("timer");
 var timerSpan = timer[0].getElementsByTagName("span");
 // gameChoices = document.getElementById('gameChoices'),
@@ -21,8 +21,8 @@ var buttonArray = [buttonOne, buttonTwo, buttonThree, buttonFour];
 // // modal_window = document.getElementById('modal_window')
 // startAnimation = new TimelineMax({repeat:0}),
 var gameIndex = 0;
-// actualScore = 0,
-var timerIndex = 30;
+var actualScore = 0;
+var timeLeft = 30;
 // runningGameAgain = false,
 var timerObject = undefined;
 var gameQuestions = [];
@@ -88,6 +88,7 @@ function startGameForNewSong() {
   audio = new Audio(song.url);
   audio.volume = 1;
   audio.play();
+  timeLeft = 30;
   buttonOne.textContent = song.answer[0];
   buttonTwo.textContent = song.answer[1];
   buttonThree.textContent = song.answer[2];
@@ -106,6 +107,7 @@ $(".btn-outline-danger").click(function() {
 
 $("#buttonOne").click(function() {
   audio.pause();
+  clearInterval(timerObject);
 
   setTimeout(startGameForNewSong, 2000);
   if (songs === 0) {
@@ -115,16 +117,33 @@ $("#buttonOne").click(function() {
 
 function playGame() {
   $("#game-area").show();
-  var timeLeft = 30;
+  // var timeLeft = 5;
   var timerId = setInterval(countdown, 1000);
 
   function countdown() {
     if (timeLeft === 0) {
-      clearTimeout(timerId);
-      return;
+      clearInterval(timerId);
+      // audio.pause();
+      // setTimeout(startGameForNewSong, 2000);
     } else {
       timeLeft--;
       timerSpan[0].textContent = timeLeft;
     }
   }
+}
+// scoreSpan[0].textContent = actualScore;
+// function checkAnswers(e) {
+//   clearInterval(timerObject);
+//   // Get the answer index
+//   var answerIndex = song.answer;
+//   // Get the actual answer index
+//   var actualCorrectAnswerIndex = song.correctAnswer;
+
+//   // Correct answer
+//   if (actualCorrectAnswerIndex == answerIndex) {
+//     actualScore += 10;
+//     scoreSpan[0].textContent = actualScore;
+//     // Incorrect Answer
+//   } else {
+//   }
 }

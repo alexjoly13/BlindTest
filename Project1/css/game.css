@@ -6,7 +6,7 @@
   margin-right: 2%;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
   font-size: 26px;
-  color: lightgray;
+  color: #b02835;
 }
 
 .score {
@@ -23,5 +23,17 @@
 #buttonTwo,
 #buttonThree,
 #buttonFour {
-  background-color: pink;
+  color: #b02835;
+  background-color: black;
+  border: none;
+  border-radius: 20px;
+  transition-duration: 0.4s;
+}
+
+#buttonOne:hover,
+#buttonTwo:hover,
+#buttonThree:hover,
+#buttonFour:hover {
+  background-color: #b02835; /* Green */
+  color: white;
 }
