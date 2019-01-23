@@ -37,3 +37,7 @@
   background-color: #b02835; /* Green */
   color: white;
 }
+
+.correctAnswer {
+  background-color: green;
+}

@@ -35,30 +35,31 @@ var songs = [
   {
     url: "audio/hip-hop/post-malone-rockstar.mp3",
     answer: ["G-Eazy", "Post-Malone", "Quavo", "Travis Scott"],
-    correctAnswer: 1
+    correctAnswer: "Post-Malone"
   },
   {
     url: "audio/hip-hop/kendrick-humble.mp3",
     answer: ["Kendrick Lamar", "ScHoolboy Q", "A$AP Rocky", "Big Sean"],
-    correctAnswer: 0
+    correctAnswer: "Kendrick Lamar"
   },
   {
     url: "audio/hip-hop/future-mask-off.mp3",
     answer: ["2 Chainz", "Gucci Mane", "Meek Mill", "Future"],
-    correctAnswer: 3
+    correctAnswer: "Future"
   },
   {
     url: "audio/hip-hop/eminem-killshot.mp3",
     answer: ["Machine Gun Kelly", "Yelawolf", "Eminem", "Dr. Dre"],
-    correctAnswer: 2
+    correctAnswer: "Eminem"
   },
   {
     url: "audio/hip-hop/logic-numbers.mp3",
     answer: ["G-Eazy", "Hoodie Allen", "Mac Miller", "Logic"],
-    correctAnswer: 1
+    correctAnswer: "Logic"
   }
 ];
 
+var corect = ["Post-Malone", "Kendrick Lamar", "Future", "Eminem", "Logic"];
 function shuffle(array) {
   let counter = array.length;
 
@@ -93,8 +94,16 @@ function startGameForNewSong() {
   buttonTwo.textContent = song.answer[1];
   buttonThree.textContent = song.answer[2];
   buttonFour.textContent = song.answer[3];
+  $("#buttonTwo").css("background-color", "black");
+  var rightAnswerText = song.answer;
+  var rightAnswerIndex = song.correctAnswer;
+  // console.log(rightAnswerText);
+  // console.log(rightAnswerIndex);
   songs.splice(songs.indexOf(song), 1);
-  console.log(songs);
+  if (songs.length === 0) {
+    console.log("FIN");
+  }
+  // console.log(songs);
 }
 
 $("#game-area").hide();
@@ -105,9 +114,53 @@ $(".btn-outline-danger").click(function() {
   setTimeout(playGame, 2000);
 });
 
+var target = "";
+
 $("#buttonOne").click(function() {
+  target = event.target.innerHTML;
+
   audio.pause();
   clearInterval(timerObject);
+  checkAnswers();
+
+  setTimeout(startGameForNewSong, 2000);
+  if (songs === 0) {
+    gameOver();
+  }
+});
+
+$("#buttonTwo").click(function() {
+  target = event.target.innerHTML;
+
+  audio.pause();
+  clearInterval(timerObject);
+  checkAnswers();
+
+  setTimeout(startGameForNewSong, 2000);
+  if (songs === 0) {
+    gameOver();
+  }
+});
+
+$("#buttonThree").click(function() {
+  target = event.target.innerHTML;
+
+  audio.pause();
+  clearInterval(timerObject);
+  checkAnswers();
+
+  setTimeout(startGameForNewSong, 2000);
+  if (songs === 0) {
+    gameOver();
+  }
+});
+
+$("#buttonFour").click(function() {
+  target = event.target.innerHTML;
+
+  audio.pause();
+  clearInterval(timerObject);
+  checkAnswers();
 
   setTimeout(startGameForNewSong, 2000);
   if (songs === 0) {
@@ -133,18 +186,26 @@ function playGame() {
   }
 }
 // scoreSpan[0].textContent = actualScore;
-// function checkAnswers(e) {
-//   clearInterval(timerObject);
-//   // Get the answer index
-//   var answerIndex = song.answer;
-//   // Get the actual answer index
-//   var actualCorrectAnswerIndex = song.correctAnswer;
+function checkAnswers() {
+  // console.log(target);
+  // console.log(corect);
+  clearInterval(timerObject);
+  // Get the answer index
+  var answerIndex = song.answer;
+  // console.log(answerIndex);
+  // Get the actual answer index
+  var actualCorrectAnswerIndex = song.correctAnswer;
 
-//   // Correct answer
-//   if (actualCorrectAnswerIndex == answerIndex) {
-//     actualScore += 10;
-//     scoreSpan[0].textContent = actualScore;
-//     // Incorrect Answer
-//   } else {
-//   }
-// }
+  // console.log(actualCorrectAnswerIndex);
+
+  // console.log(oneAnswer);
+  if (corect.includes(target)) {
+    // console.log("dhfh");
+    actualScore += 50;
+    // $("#buttonTwo").css("background-color", "green");
+    scoreSpan[0].textContent = actualScore;
+  } else {
+    // $("#buttonTwo").css("background-color", "green");
+    // console.log("pizza");
+  }
+}
