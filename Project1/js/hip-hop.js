@@ -1,8 +1,3 @@
-// function gamePlay() {
-
-// var self = this,
-// w = window.innerWidth,
-// h = window.innerHeight,
 // stage = document.getElementById('stage'),
 // startButton = document.getElementById("btn-outline-danger"),
 // // title = document.getElementById('title'),
@@ -18,7 +13,7 @@ var buttonTwo = document.getElementById("buttonTwo");
 var buttonThree = document.getElementById("buttonThree");
 var buttonFour = document.getElementById("buttonFour");
 var buttonArray = [buttonOne, buttonTwo, buttonThree, buttonFour];
-// // modal_window = document.getElementById('modal_window')
+var modal_window = document.getElementById("modal_window");
 // startAnimation = new TimelineMax({repeat:0}),
 var gameIndex = 0;
 var actualScore = 0;
@@ -61,6 +56,7 @@ var songs = [
 ];
 
 var corect = ["Post-Malone", "Kendrick Lamar", "Future", "Eminem", "Logic"];
+
 function shuffle(array) {
   let counter = array.length;
 
@@ -95,7 +91,8 @@ function startGameForNewSong() {
   buttonTwo.textContent = song.answer[1];
   buttonThree.textContent = song.answer[2];
   buttonFour.textContent = song.answer[3];
-  $("#buttonTwo").css("background-color", "black");
+  // $("#buttonTwo").css("background-color", "black");
+  $(".score").css("background-color", "black");
   var rightAnswerText = song.answer;
   var rightAnswerIndex = song.correctAnswer;
   // console.log(rightAnswerText);
@@ -103,11 +100,14 @@ function startGameForNewSong() {
   songs.splice(songs.indexOf(song), 1);
   if (songs.length === 0) {
     console.log("FIN");
+    clearInterval(runTimer);
+    return;
   }
   // console.log(songs);
 }
 
 $("#game-area").hide();
+$(".modal.modal-dialog-centered").hide();
 
 $(".btn-outline-danger").click(function() {
   $(".btn-outline-danger").hide();
@@ -119,12 +119,12 @@ $("#buttonOne").click(function() {
   target = event.target.innerHTML;
 
   audio.pause();
-  clearInterval(timerObject);
+  clearInterval(runTimer);
   checkAnswers();
 
   setTimeout(startGameForNewSong, 2000);
-  if (songs === 0) {
-    gameOver();
+  if (songs.length <= 0) {
+    EndOfGame();
   }
 });
 
@@ -132,12 +132,12 @@ $("#buttonTwo").click(function() {
   target = event.target.innerHTML;
 
   audio.pause();
-  clearInterval(timerObject);
+  clearInterval(runTimer);
   checkAnswers();
 
   setTimeout(startGameForNewSong, 2000);
-  if (songs === 0) {
-    gameOver();
+  if (songs.length <= 0) {
+    EndOfGame();
   }
 });
 
@@ -145,12 +145,12 @@ $("#buttonThree").click(function() {
   target = event.target.innerHTML;
 
   audio.pause();
-  clearInterval(timerObject);
+  clearInterval(runTimer);
   checkAnswers();
 
   setTimeout(startGameForNewSong, 2000);
-  if (songs === 0) {
-    gameOver();
+  if (songs.length <= 0) {
+    EndOfGame();
   }
 });
 
@@ -158,32 +158,38 @@ $("#buttonFour").click(function() {
   target = event.target.innerHTML;
 
   audio.pause();
-  clearInterval(timerObject);
+  clearInterval(runTimer);
   checkAnswers();
 
   setTimeout(startGameForNewSong, 2000);
-  if (songs === 0) {
-    gameOver();
+  if (songs.length <= 0) {
+    EndOfGame();
   }
 });
 
 function playGame() {
   $("#game-area").show();
-  // var timeLeft = 5;
-  var timerId = setInterval(countdown, 1000);
+  runTimer();
+}
 
-  function countdown() {
-    if (timeLeft === 0) {
-      clearInterval(timerId);
-      audio.pause();
-      setTimeout(startGameForNewSong, 2000);
-      timeLeft = 30;
-    } else {
-      timeLeft--;
-      timerSpan[0].textContent = timeLeft;
-    }
+function runTimer() {
+  setInterval(countDown, 1000);
+}
+
+function countDown() {
+  if (timeLeft === 0) {
+    clearInterval(runTimer);
+    audio.pause();
+    setTimeout(startGameForNewSong, 1000);
+    timeLeft = 30;
+  } else if (songs.length <= 0) {
+    clearInterval(runTimer);
+  } else {
+    timeLeft--;
+    timerSpan[0].textContent = timeLeft;
   }
 }
+
 scoreSpan[0].textContent = actualScore;
 function checkAnswers() {
   // console.log(target);
@@ -201,10 +207,15 @@ function checkAnswers() {
   if (corect.includes(target)) {
     // console.log("dhfh");
     actualScore += 50;
-    // $("#buttonTwo").css("background-color", "green");
+    $(".score").css("background-color", "green");
     scoreSpan[0].textContent = actualScore;
   } else {
-    // $("#buttonTwo").css("background-color", "green");
+    $(".score").css("background-color", "red");
     // console.log("pizza");
   }
+}
+
+function EndOfGame() {
+  $(".modal.modal-dialog-centered").show();
+  clearInterval(runTimer);
 }
