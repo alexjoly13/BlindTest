@@ -243,5 +243,6 @@ function tweetScore() {
 function EndOfGame() {
   $(".modal.modal-dialog-centered").show();
   clearInterval(runTimer);
-  $(".showScore").innerHTML = actualScore;
+  var finalScore = document.querySelector(".showScore");
+  finalScore.innerHTML = actualScore;
 }
