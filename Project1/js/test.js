@@ -345,7 +345,7 @@ function animationPipeline() {
     var text =
       "I just played Web Trivia Game on @CodePen and scored: " +
       actualScore +
-      " points! @matt_815";
+      " points! @AlxSlwnds";
     var url =
       "https://twitter.com/intent/tweet?original_referer=" +
       u +

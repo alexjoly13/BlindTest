@@ -21,33 +21,33 @@ var target = "";
 
 var songs = [
   {
-    url: "audio/hip-hop/post-malone-rockstar.mp3",
-    answer: ["G-Eazy", "Post-Malone", "Quavo", "Travis Scott"],
-    correctAnswer: "Post-Malone"
+    url: "audio/metal/adtr.mp3",
+    answer: ["A Day To Remember", "Alexisonfire", "Silverstein", "Underoath"],
+    correctAnswer: "A Day To Remember"
   },
   {
-    url: "audio/hip-hop/kendrick-humble.mp3",
-    answer: ["Kendrick Lamar", "ScHoolboy Q", "A$AP Rocky", "Big Sean"],
-    correctAnswer: "Kendrick Lamar"
+    url: "audio/metal/deftones.mp3",
+    answer: ["KoRn", "Slipknot", "Deftones", "Filter"],
+    correctAnswer: "Deftones"
   },
   {
-    url: "audio/hip-hop/future-mask-off.mp3",
-    answer: ["2 Chainz", "Gucci Mane", "Meek Mill", "Future"],
-    correctAnswer: "Future"
+    url: "audio/metal/gojira.mp3",
+    answer: ["Metallica", "Mastodon", "Meshuggah", "Gojira"],
+    correctAnswer: "Gojira"
   },
   {
-    url: "audio/hip-hop/eminem-killshot.mp3",
-    answer: ["Machine Gun Kelly", "Yelawolf", "Eminem", "Dr. Dre"],
-    correctAnswer: "Eminem"
+    url: "audio/metal/inflames.mp3",
+    answer: ["Dark Tranquillity", "In Flames", "Soilwork", "The Haunted"],
+    correctAnswer: "In Flames"
   },
   {
-    url: "audio/hip-hop/logic-numbers.mp3",
-    answer: ["G-Eazy", "Paramore", "Mac Miller", "Logic"],
-    correctAnswer: "Logic"
+    url: "audio/metal/oceano.mp3",
+    answer: ["Carnifex", "Despised Icon", "Oceano", "Whitechapel"],
+    correctAnswer: "Oceano"
   }
 ];
 
-var corect = ["Post-Malone", "Kendrick Lamar", "Future", "Eminem", "Logic"];
+var corect = ["A Day To Remember", "Deftones", "Gojira", "In Flames", "Oceano"];
 
 // Suffle Songs
 // -------------------------------------------------------------------------------------------------------------------------
