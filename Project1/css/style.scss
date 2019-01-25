@@ -1,0 +1,225 @@
+$background-color: #f9f8f8;
+$headline-color: #222222;
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Raleway", sans-serif;
+  background: $background-color;
+}
+header.header {
+  // position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  // transform: translateY(-50%);
+  h1 {
+    font-size: 8rem;
+    color: $headline-color;
+    text-align: center;
+    margin-top: 0;
+    text-transform: uppercase;
+    font-weight: 900;
+  }
+}
+.glitch-window {
+  position: absolute;
+  top: 0;
+  left: -2px;
+  width: 100%;
+  color: $headline-color;
+  text-shadow: 2px 0 $background-color, -1px 0 yellow, -2px 0 green;
+  overflow: hidden;
+  animation: crt-me 2500ms infinite linear alternate-reverse;
+  // background: red;
+}
+
+//Animation Keyframes
+@keyframes crt-me {
+  0% {
+    clip: rect(31px, 9999px, 94px, 0);
+  }
+  10% {
+    clip: rect(112px, 9999px, 76px, 0);
+  }
+  20% {
+    clip: rect(85px, 9999px, 77px, 0);
+  }
+  30% {
+    clip: rect(27px, 9999px, 97px, 0);
+  }
+  40% {
+    clip: rect(64px, 9999px, 98px, 0);
+  }
+  50% {
+    clip: rect(61px, 9999px, 85px, 0);
+  }
+  60% {
+    clip: rect(99px, 9999px, 114px, 0);
+  }
+  70% {
+    clip: rect(34px, 9999px, 115px, 0);
+  }
+  80% {
+    clip: rect(98px, 9999px, 129px, 0);
+  }
+  90% {
+    clip: rect(43px, 9999px, 96px, 0);
+  }
+  100% {
+    clip: rect(82px, 9999px, 64px, 0);
+  }
+}
+.carousel {
+  width: 50%;
+  height: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.text-center {
+  padding-top: 20px;
+  font-size: 1.75em;
+}
+
+.red-strong {
+  color: #54caea;
+}
+
+.nickname {
+  padding-left: 42%;
+  padding-bottom: 10px;
+}
+
+.input {
+  // needs to be relative so the :focus span is positioned correctly
+  position: relative;
+
+  // bigger font size for demo purposes
+  font-size: 1.5em;
+
+  // the border gradient
+  background: linear-gradient(21deg, #10abff, #1beabd);
+
+  // the width of the input border
+  padding: 3px;
+  margin: 0 auto;
+  // we want inline fields by default
+  display: inline-block;
+
+  // we want rounded corners no matter the size of the field
+  border-radius: 9999em;
+
+  // style of the actual input field
+  *:not(span) {
+    position: relative;
+    display: inherit;
+    border-radius: inherit;
+    margin: 0;
+    border: none;
+    outline: none;
+    padding: 0 0.325em;
+    z-index: 1; // needs to be above the :focus span
+
+    // summon fancy shadow styles when focussed
+    &:focus + span {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  // we don't animate box-shadow directly as that can't be done on the GPU, only animate opacity and transform for high performance animations.
+  span {
+    transform: scale(0.993, 0.94); // scale it down just a little bit
+    transition: transform 0.5s, opacity 0.25s;
+    opacity: 0; // is hidden by default
+
+    position: absolute;
+    z-index: 0; // needs to be below the field (would block input otherwise)
+    margin: 4px; // a bit bigger than .input padding, this prevents background color pixels shining through
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    pointer-events: none; // this allows the user to click through this element, as the shadow is rather wide it might overlap with other fields and we don't want to block those.
+
+    // fancy shadow styles
+    box-shadow: inset 0 0 0 3px #fff, 0 0 0 4px #fff, 3px -3px 30px #1beabd,
+      -3px 3px 30px #10abff;
+  }
+}
+
+.btn3,
+.btn3:link,
+.btn3:visited {
+  color: #333;
+  width: 120px;
+  font-size: 0.8em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  min-width: 100px;
+  max-width: 60%;
+  position: relative;
+  margin: 0 auto;
+  border: 2px solid transparent;
+  transition: all 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+  &:after,
+  &:before {
+    content: "";
+    position: absolute;
+    left: -1em;
+    top: -2px;
+    height: 3.3em;
+    width: 0;
+    border: 1px solid #54caea;
+    transition: inherit;
+  }
+
+  &:after {
+    left: auto;
+    right: -1em;
+  }
+
+  &:hover {
+    border-color: #54caea;
+    transition: border-color 0.2s 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+    &:after,
+    &:before {
+      right: -2px;
+      transition: all 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    }
+
+    &:before {
+      left: -2px;
+      right: auto;
+    }
+  }
+}
+
+a {
+  padding: 15px 30px;
+  text-decoration: none;
+  font-size: 18px;
+  display: inline;
+  margin: 20px auto;
+}
+
+.wrap2 {
+  padding-top: 80px;
+  padding-left: 40px;
+  // top: 50%;
+  // left: 50%;
+  // margin-top: -259px;
+  // margin-left: -89px;
+  text-align: center;
+  display: inline;
+  justify-content: space-around;
+}
+
+.choices {
+  padding-left: 35%;
+  display: flex;
+}

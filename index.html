@@ -4,7 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>BlindTest Party</title>
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:900"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+    <script
+      src="http://code.jquery.com/jquery-1.8.2.min.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="jquery.carouFredSel-6.2.0-packed.js"
+      type="text/javascript"
+    ></script>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
@@ -17,18 +33,12 @@
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
       integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
       crossorigin="anonymous"
-    />
-
-    <link
-      href="https://fonts.googleapis.com/css?family=Nunito:300,400,700"
-      rel="stylesheet"
     />
     <link rel="stylesheet" href="./Project1/css/style.css" />
   </head>
   <body>
-    <section class="game-info">
-      <div><h1>Welcome to the finest BlindTest Party</h1></div>
-
+    <header class="header"><h1 class="glitched">Blind Test</h1></header>
+    <section>
       <p class="text-center">
         One simple rule : <strong class="red-strong">5 Songs</strong>,
         <strong class="red-strong">30 seconds each</strong> to guess the artist,
@@ -36,88 +46,73 @@
         <strong class="red-strong">GAME IS ON</strong> !
       </p>
 
-      <input
-        type="text"
-        id="gameName"
-        placeholder="Your Nickname"
-        required=""
-      />
+      <p class="nickname">
+        <span class="input">
+          <input type="text" placeholder="Your Nickname" /> <span></span>
+        </span>
+      </p>
     </section>
-
-    <div
-      id="carouselExampleFade"
-      class="carousel slide carousel-fade"
-      data-ride="carousel"
-      data-interval="2500"
-      data-pause="hover"
-    >
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img
-            src="./Project1/images/edm2.jpg"
-            class="d-block w-100"
-            alt="..."
-          />
-          <a href="./Project1/dubstep.html"
-            ><button
-              type="button"
-              class="btn btn-outline-danger btn-lg align-middle"
-            >
-              PLAY DUBSTEP SECTION
-            </button></a
-          >
+    <section>
+      <div
+        id="carouselExampleFade"
+        class="carousel slide carousel-fade"
+        data-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="./Project1/images/converge.jpg"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="./Project1/images/rap.jpg"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="./Project1/images/edm.jpg"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
         </div>
-        <div class="carousel-item">
-          <img
-            src="./Project1/images/rap2.jpg"
-            class="d-block w-100"
-            alt="..."
-          />
-          <a href="./Project1/hip-hop.html"
-            ><button
-              type="button"
-              class="btn btn-outline-danger btn-lg align-middle"
-            >
-              PLAY HIP-HOP SECTION
-            </button></a
-          >
-        </div>
-        <div class="carousel-item">
-          <img
-            src="./Project1/images/metal2.jpg"
-            class="d-block w-100"
-            alt="..."
-          />
-          <a href="./Project1/metal.html"
-            ><button
-              type="button"
-              class="btn btn-outline-danger btn-lg align-middle"
-            >
-              PLAY METAL SECTION
-            </button>
-          </a>
-        </div>
+        <a
+          class="carousel-control-prev"
+          href="#carouselExampleFade"
+          role="button"
+          data-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#carouselExampleFade"
+          role="button"
+          data-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
       </div>
-      <a
-        class="carousel-control-prev"
-        href="#carouselExampleFade"
-        role="button"
-        data-slide="prev"
-      >
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a
-        class="carousel-control-next"
-        href="#carouselExampleFade"
-        role="button"
-        data-slide="next"
-      >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-
+    </section>
+    <section class="choices">
+      <div class="wrap2">
+        <a href="./Project1/metal.html" class="btn3">METAL</a>
+      </div>
+      <div class="wrap2">
+        <a href="./Project1/hip-hop.html" class="btn3">HIP-HOP</a>
+      </div>
+      <div class="wrap2">
+        <a href="./Project1/dubstep.html" class="btn3">DUBSTEP</a>
+      </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -133,6 +128,6 @@
       integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
       crossorigin="anonymous"
     ></script>
-    <script src="js/script.js"></script>
+    <script src="./Project1/js/script.js"></script>
   </body>
 </html>

@@ -28,11 +28,52 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <h1>NOW PLAYING IN HIP-HOP SECTION</h1>
+    <h1>Please check <strong class="blue-strong">volume</strong> is on ! :)</h1>
+    <h2>NOW PLAYING IN HIP-HOP SECTION</h2>
 
-    <button type="button" class="btn btn-outline-danger btn-lg align-middle">
-      LAUNCH GAME
-    </button>
+    <div class="container-play">
+      <a href="#" class="playBut">
+        <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In  -->
+        <svg
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+          x="0px"
+          y="0px"
+          width="213.7px"
+          height="213.7px"
+          viewBox="0 0 213.7 213.7"
+          enable-background="new 0 0 213.7 213.7"
+          xml:space="preserve"
+        >
+          <polygon
+            class="triangle"
+            id="XMLID_18_"
+            fill="none"
+            stroke-width="7"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-miterlimit="10"
+            points="
+      73.5,62.5 148.5,105.8 73.5,149.1 "
+          />
+
+          <circle
+            class="circle"
+            id="XMLID_17_"
+            fill="none"
+            stroke-width="7"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-miterlimit="10"
+            cx="106.8"
+            cy="106.8"
+            r="103.3"
+          />
+        </svg>
+      </a>
+    </div>
 
     <section id="game-area">
       <div id="gameHeader">
@@ -40,33 +81,17 @@
           <div class="container spinner spinner-5">TIME: <span></span></div>
         </div>
         <div class="score">
-          <div class="container">SCORE: <span></span></div>
+          <div class=" container container-score">SCORE: <span></span></div>
         </div>
       </div>
-      <div id="gameChoices">
+
+      <div class="container container-btn">
         <div class="row">
-          <div class="">
-            <div class="container-btn">
-              <button id="buttonOne" data-index="0">Réponse 1</button>
-            </div>
-          </div>
-          <div class="left half">
-            <div class="container-btn">
-              <button id="buttonTwo" data-index="1">Réponse 2</button>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="left half">
-            <div class="container-btn">
-              <button id="buttonThree" data-index="2">Réponse 3</button>
-            </div>
-          </div>
-          <div class="left half">
-            <div class="container-btn">
-              <button id="buttonFour" data-index="3">Réponse 4</button>
-            </div>
-          </div>
+          <div class="col"><button id="buttonOne">hover</button></div>
+          <div class="col"><button id="buttonTwo">hover</button></div>
+          <div class="row"></div>
+          <div class="col"><button id="buttonThree">hover</button></div>
+          <div class="col"><button id="buttonFour">hover</button></div>
         </div>
       </div>
     </section>
@@ -75,19 +100,13 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">CONGRATULATIONS !</h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
+            <h5 class="modal-title">
+              <img src="./images/giphy.gif" width="460px" alt="" srcset="" />
+            </h5>
           </div>
           <div class="modal-body">
             <p>
-              WELL DONE ! Your final Score is
+              CONGRATULATIONS ! Your final Score is
               <span class="showScore"></span> Points !
             </p>
           </div>
@@ -128,6 +147,6 @@
       integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
       crossorigin="anonymous"
     ></script>
-    <script src="js/hip-hop.js"></script>
+    <script src="./js/hip-hop.js"></script>
   </body>
 </html>

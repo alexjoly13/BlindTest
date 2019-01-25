@@ -1,48 +1,173 @@
 * {
-  font-family: Nunito;
-  text-align: center;
-  color: lightgrey;
-}
+  box-sizing: border-box; }
 
 body {
-  background-color: black;
+  font-family: "Raleway", sans-serif;
+  background: #f9f8f8; }
 
-  margin: 0;
-}
+header.header {
+  top: 50%;
+  left: 0;
+  width: 100%; }
+  header.header h1 {
+    font-size: 8rem;
+    color: #222222;
+    text-align: center;
+    margin-top: 0;
+    text-transform: uppercase;
+    font-weight: 900; }
 
-.game-info {
-  padding: 3% 0% 5%;
-}
+.glitch-window {
+  position: absolute;
+  top: 0;
+  left: -2px;
+  width: 100%;
+  color: #222222;
+  text-shadow: 2px 0 #f9f8f8, -1px 0 yellow, -2px 0 green;
+  overflow: hidden;
+  animation: crt-me 2500ms infinite linear alternate-reverse; }
 
+@keyframes crt-me {
+  0% {
+    clip: rect(31px, 9999px, 94px, 0); }
+  10% {
+    clip: rect(112px, 9999px, 76px, 0); }
+  20% {
+    clip: rect(85px, 9999px, 77px, 0); }
+  30% {
+    clip: rect(27px, 9999px, 97px, 0); }
+  40% {
+    clip: rect(64px, 9999px, 98px, 0); }
+  50% {
+    clip: rect(61px, 9999px, 85px, 0); }
+  60% {
+    clip: rect(99px, 9999px, 114px, 0); }
+  70% {
+    clip: rect(34px, 9999px, 115px, 0); }
+  80% {
+    clip: rect(98px, 9999px, 129px, 0); }
+  90% {
+    clip: rect(43px, 9999px, 96px, 0); }
+  100% {
+    clip: rect(82px, 9999px, 64px, 0); } }
 .carousel {
   width: 50%;
   height: 500px;
   margin: 0 auto;
-  text-align: center;
-}
+  text-align: center; }
 
-.carousel-item img {
-  border-radius: 50px;
-  padding-bottom: 20px;
-}
-
-p {
-  font-size: 1.5em;
-  /* text-align: center; */
-}
-
-input {
-  outline: 0;
-  border: none;
-  border-bottom: 4px solid #b02835;
-  font-size: 4em;
-  width: 100%;
-  margin: 0 auto;
-  z-index: 100;
-  background-color: #000;
-  transition: all 0.5s;
-}
+.text-center {
+  padding-top: 20px;
+  font-size: 1.75em; }
 
 .red-strong {
-  color: #b02835;
-}
+  color: #54caea; }
+
+.nickname {
+  padding-left: 42%;
+  padding-bottom: 10px; }
+
+.input {
+  position: relative;
+  font-size: 1.5em;
+  background: linear-gradient(21deg, #10abff, #1beabd);
+  padding: 3px;
+  margin: 0 auto;
+  display: inline-block;
+  border-radius: 9999em; }
+  .input *:not(span) {
+    position: relative;
+    display: inherit;
+    border-radius: inherit;
+    margin: 0;
+    border: none;
+    outline: none;
+    padding: 0 0.325em;
+    z-index: 1; }
+    .input *:not(span):focus + span {
+      opacity: 1;
+      transform: scale(1); }
+  .input span {
+    transform: scale(0.993, 0.94);
+    transition: transform 0.5s, opacity 0.25s;
+    opacity: 0;
+    position: absolute;
+    z-index: 0;
+    margin: 4px;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    box-shadow: inset 0 0 0 3px #fff, 0 0 0 4px #fff, 3px -3px 30px #1beabd, -3px 3px 30px #10abff; }
+
+.btn3,
+.btn3:link,
+.btn3:visited {
+  color: #333;
+  width: 120px;
+  font-size: 0.8em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  min-width: 100px;
+  max-width: 60%;
+  position: relative;
+  margin: 0 auto;
+  border: 2px solid transparent;
+  transition: all 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955); }
+  .btn3:after, .btn3:before,
+  .btn3:link:after,
+  .btn3:link:before,
+  .btn3:visited:after,
+  .btn3:visited:before {
+    content: "";
+    position: absolute;
+    left: -1em;
+    top: -2px;
+    height: 3.3em;
+    width: 0;
+    border: 1px solid #54caea;
+    transition: inherit; }
+  .btn3:after,
+  .btn3:link:after,
+  .btn3:visited:after {
+    left: auto;
+    right: -1em; }
+  .btn3:hover,
+  .btn3:link:hover,
+  .btn3:visited:hover {
+    border-color: #54caea;
+    transition: border-color 0.2s 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955); }
+    .btn3:hover:after, .btn3:hover:before,
+    .btn3:link:hover:after,
+    .btn3:link:hover:before,
+    .btn3:visited:hover:after,
+    .btn3:visited:hover:before {
+      right: -2px;
+      transition: all 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955); }
+    .btn3:hover:before,
+    .btn3:link:hover:before,
+    .btn3:visited:hover:before {
+      left: -2px;
+      right: auto; }
+
+a {
+  padding: 15px 30px;
+  text-decoration: none;
+  font-size: 18px;
+  display: inline;
+  margin: 20px auto; }
+
+.wrap2 {
+  padding-top: 80px;
+  padding-left: 40px;
+  text-align: center;
+  display: inline;
+  justify-content: space-around; }
+
+.choices {
+  padding-left: 35%;
+  display: flex; }
+
+/*# sourceMappingURL=style.css.map */

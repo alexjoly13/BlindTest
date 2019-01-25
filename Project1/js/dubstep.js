@@ -89,7 +89,7 @@ function startGameForNewSong() {
   buttonThree.textContent = song.answer[2];
   buttonFour.textContent = song.answer[3];
   // $("#buttonTwo").css("background-color", "black");
-  $(".score").css("background-color", "black");
+  $(".container-score").css("background-color", "#f9f8f8");
   var rightAnswerText = song.answer;
   var rightAnswerIndex = song.correctAnswer;
   songs.splice(songs.indexOf(song), 1);
@@ -106,10 +106,10 @@ function startGameForNewSong() {
 
 $("#game-area").hide();
 $(".modal.modal-dialog-centered").hide();
-$("h1").hide();
+$("h2").hide();
 
-$(".btn-outline-danger").click(function() {
-  $(".btn-outline-danger").hide();
+$(".container-play").click(function() {
+  $(".container-play").hide();
   setTimeout(startGameForNewSong, 2000);
   setTimeout(playGame, 2000);
 });
@@ -171,7 +171,8 @@ $("#buttonFour").click(function() {
 
 function playGame() {
   $("#game-area").show();
-  $("h1").show();
+  $("h2").show();
+  $("h1").hide();
   runTimer();
 }
 
@@ -206,10 +207,10 @@ function checkAnswers() {
   if (corect.includes(target)) {
     // console.log("dhfh");
     actualScore += 50;
-    $(".score").css("background-color", "green");
+    $(".container-score").css("background-color", "green");
     scoreSpan[0].textContent = actualScore;
   } else {
-    $(".score").css("background-color", "red");
+    $(".container-score").css("background-color", "red");
     // console.log("pizza");
   }
 }
@@ -245,4 +246,9 @@ function EndOfGame() {
   clearInterval(runTimer);
   var finalScore = document.querySelector(".showScore");
   finalScore.innerHTML = actualScore;
+  $("body").css("background-color", "#222222c7");
+  $(".container-score").css("background-color", "#222222c7");
+  $(".score").css("background-color", "#222222c7");
 }
+
+// -------------------------------------------------------------------------------------------------------------------------
